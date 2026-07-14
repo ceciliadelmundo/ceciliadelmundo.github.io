@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ma. Cecilia del Mundo — Digital Product Strategist & Business Growth Leader" />
+  <title>Ma. Cecilia del Mundo</title>
+  <style>
+    :root{
+      --navy:#0B1220;
+      --white:#FFFFFF;
+      --ink:#1D2433;
+      --muted:#667085;
+      --soft:#F5F7FA;
+      --line:#E4E7EC;
+      --yellow:#DFFF00;
+      --green:#159A68;
+      --max:1180px;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(calc(100% - 40px), var(--max));
+      margin-inline:auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(11,18,32,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      color:var(--white);
+      font-weight:750;
+      letter-spacing:-.02em;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:rgba(255,255,255,.78);
+      font-size:.95rem;
+    }
+    .nav-links a:hover{color:var(--white)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:var(--yellow);
+      color:var(--navy);
+    }
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{
+      border-color:rgba(255,255,255,.28);
+      color:var(--white);
+      background:transparent;
+    }
+    .btn-outline:hover{border-color:var(--white)}
+
+    .hero{
+      background:
+        radial-gradient(circle at 85% 20%, rgba(223,255,0,.13), transparent 30%),
+        linear-gradient(180deg, #0B1220 0%, #111A2D 100%);
+      color:var(--white);
+      padding:110px 0 100px;
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(255,255,255,.72);
+      font-weight:650;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      margin-bottom:24px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:34px;
+      height:2px;
+      background:var(--yellow);
+    }
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      font-size:clamp(3.2rem, 8vw, 7rem);
+      line-height:.95;
+      letter-spacing:-.065em;
+      margin-bottom:28px;
+      max-width:980px;
+    }
+    .hero-role{
+      font-size:clamp(1.15rem, 2vw, 1.45rem);
+      color:var(--yellow);
+      font-weight:750;
+      margin-bottom:20px;
+    }
+    .hero-copy{
+      max-width:760px;
+      color:rgba(255,255,255,.75);
+      font-size:1.1rem;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:34px;
+    }
+
+    section{padding:100px 0}
+    .section-label{
+      color:var(--green);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      margin-bottom:16px;
+    }
+    h2{
+      font-size:clamp(2.2rem, 5vw, 4.5rem);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      margin-bottom:24px;
+    }
+    .lead{
+      font-size:1.12rem;
+      color:var(--muted);
+      max-width:780px;
+    }
+
+    .philosophy{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:72px;
+      align-items:center;
+    }
+    .portrait-card{
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      padding:18px;
+    }
+    .portrait-placeholder{
+      aspect-ratio:4/5;
+      border-radius:16px;
+      background:
+        linear-gradient(135deg, rgba(11,18,32,.08), rgba(223,255,0,.14)),
+        var(--white);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color:var(--muted);
+      padding:24px;
+      border:1px dashed #C9CED8;
+    }
+    .portrait-meta{
+      padding:18px 4px 2px;
+    }
+    .portrait-meta strong{
+      display:block;
+      font-size:1.15rem;
+    }
+    .portrait-meta span{color:var(--muted)}
+
+    .value-section{background:var(--soft)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:42px;
+    }
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      min-height:220px;
+      transition:.2s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 50px rgba(16,24,40,.08);
+    }
+    .icon{
+      width:46px;
+      height:46px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:var(--navy);
+      color:var(--yellow);
+      font-weight:850;
+      margin-bottom:28px;
+    }
+    .card h3{
+      font-size:1.35rem;
+      letter-spacing:-.025em;
+      margin-bottom:10px;
+    }
+    .card p{color:var(--muted);margin-bottom:0}
+
+    .build-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:42px;
+    }
+    .build-item{
+      border-top:1px solid var(--line);
+      padding:28px 0 6px;
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:18px;
+    }
+    .build-number{
+      width:46px;height:46px;border-radius:50%;
+      background:var(--yellow);
+      color:var(--navy);
+      display:grid;place-items:center;
+      font-weight:850;
+    }
+    .build-item h3{margin-bottom:8px}
+    .build-item p{color:var(--muted);margin-bottom:0}
+
+    .work{
+      background:var(--navy);
+      color:var(--white);
+    }
+    .work .lead{color:rgba(255,255,255,.7)}
+    .strengths{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:36px;
+    }
+    .chip{
+      border:1px solid rgba(255,255,255,.2);
+      padding:12px 16px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+    }
+
+    .focus-panel{
+      background:linear-gradient(135deg, var(--navy), #192844);
+      color:var(--white);
+      border-radius:32px;
+      padding:64px;
+      position:relative;
+      overflow:hidden;
+    }
+    .focus-panel::after{
+      content:"";
+      position:absolute;
+      width:220px;height:220px;
+      border-radius:50%;
+      background:var(--yellow);
+      opacity:.16;
+      right:-70px;top:-70px;
+    }
+    .focus-panel p{color:rgba(255,255,255,.72);max-width:760px}
+
+    .cta{
+      text-align:center;
+      padding:120px 0;
+    }
+    .cta h2{max-width:800px;margin-inline:auto}
+    .cta p{max-width:680px;margin:0 auto 28px;color:var(--muted)}
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+    .cta .btn-outline{
+      color:var(--navy);
+      border-color:#C9CED8;
+    }
+
+    footer{
+      background:var(--navy);
+      color:rgba(255,255,255,.72);
+      padding:30px 0;
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      font-size:.92rem;
+    }
+
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .philosophy{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .build-list{grid-template-columns:1fr}
+      .focus-panel{padding:42px 28px}
+    }
+    @media (max-width:640px){
+      .container{width:min(calc(100% - 28px), var(--max))}
+      .hero{padding:80px 0}
+      section{padding:74px 0}
+      .grid{grid-template-columns:1fr}
+      .hero-actions,.cta-actions{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Ma. Cecilia del Mundo</a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#value">Value</a>
+        <a href="#experience">Experience</a>
+        <a href="#focus">Current Focus</a>
+        <a class="btn btn-primary" href="#connect">Let's Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">The Strategic Builder</div>
+        <h1>Building products.<br>Connecting people.<br>Creating impact.</h1>
+        <div class="hero-role">Digital Product Strategist &amp; Business Growth Leader</div>
+        <p class="hero-copy">
+          I help organizations transform ideas into scalable digital products by connecting
+          business strategy, product execution, and cross-functional leadership.
+        </p>
+        <div class="hero-actions">
+          <!-- Replace # with your actual LinkedIn URL -->
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="https://codebrew.co" target="_blank" rel="noopener">Explore CodeBrew</a>
+          <!-- Replace # with a public resume URL -->
+          <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy">
+      <div class="container philosophy">
+        <div>
+          <div class="section-label">My Philosophy</div>
+          <h2>Technology doesn't create impact. People do.</h2>
+          <p class="lead">
+            The most successful digital products aren't built by technology alone. They're built
+            when business strategy, thoughtful execution, and human needs come together.
+          </p>
+          <p class="lead">
+            Throughout my career, I've worked across startups, fintech, digital logistics, and
+            enterprise organizations, helping teams turn ideas into products that create meaningful
+            value. I believe technology is most powerful when it improves people's lives while
+            supporting sustainable business growth.
+          </p>
+        </div>
+
+        <aside class="portrait-card">
+          <div class="portrait-placeholder">
+            Replace this block with a small-to-medium editorial portrait.
+          </div>
+          <div class="portrait-meta">
+            <strong>Ma. Cecilia del Mundo</strong>
+            <span>Digital Product Strategist &amp; Business Growth Leader</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="value" class="value-section">
+      <div class="container">
+        <div class="section-label">How I Create Value</div>
+        <h2>Turning strategy into execution.</h2>
+        <p class="lead">
+          I work across product, growth, partnerships, and operations to help teams build with
+          clarity and move with purpose.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Product Strategy</h3>
+            <p>Translate business opportunities into clear product direction and customer-focused solutions.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Business Growth</h3>
+            <p>Develop commercial strategies and identify opportunities that support sustainable growth.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Strategic Partnerships</h3>
+            <p>Build relationships that strengthen digital ecosystems and create shared value.</p>
+          </article>
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>Go-to-Market</h3>
+            <p>Align product, engineering, operations, and commercial teams to launch with confidence.</p>
+          </article>
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>Leadership</h3>
+            <p>Bring people together, simplify complexity, and create momentum around shared goals.</p>
+          </article>
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>AI Innovation</h3>
+            <p>Explore how emerging technologies can enable more responsible and human-centered products.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-label">What I've Helped Build</div>
+        <h2>Products, partnerships, and growth across the digital economy.</h2>
+
+        <div class="build-list">
+          <article class="build-item">
+            <div class="build-number">01</div>
+            <div>
+              <h3>Startups &amp; Digital Products</h3>
+              <p>As Co-Founder of CodeBrew, I work with founders and organizations to move ideas from strategy to delivery through business development, stakeholder alignment, and cross-functional execution.</p>
+            </div>
+          </article>
+
+          <article class="build-item">
+            <div class="build-number">02</div>
+            <div>
+              <h3>Digital Payments &amp; Financial Innovation</h3>
+              <p>At Home Credit Philippines and Grab Financial Group, I led digital payment initiatives across mobile, web, QR, barcode, BNPL, lending, and merchant ecosystems while building partnerships across banks, fintechs, telcos, payment gateways, and retailers.</p>
+            </div>
+          </article>
+
+          <article class="build-item">
+            <div class="build-number">03</div>
+            <div>
+              <h3>Regional Growth &amp; Strategic Partnerships</h3>
+              <p>Led business growth initiatives across Southeast Asia, working with regional teams and enterprise partners to strengthen commercial performance and support product adoption across multiple markets.</p>
+            </div>
+          </article>
+
+          <article class="build-item">
+            <div class="build-number">04</div>
+            <div>
+              <h3>Digital Logistics &amp; eCommerce</h3>
+              <p>As a pioneering member of QuadX, I helped shape commercial growth, strategic partnerships, and product commercialization for technology-enabled logistics solutions.</p>
+            </div>
+          </article>
+
+          <article class="build-item">
+            <div class="build-number">05</div>
+            <div>
+              <h3>Teams &amp; Communities</h3>
+              <p>I enjoy building environments where people can contribute, collaborate, and grow—whether leading product teams, mentoring colleagues, or supporting community initiatives in Canada.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="container">
+        <div class="section-label" style="color:var(--yellow)">How I Work</div>
+        <h2>Building products is a team sport.</h2>
+        <p class="lead">
+          My leadership style combines strategic thinking, relationship building, and accountability.
+          I bring people together around a shared vision, create clarity in complex situations, and
+          keep teams focused on meaningful outcomes.
+        </p>
+        <div class="strengths" aria-label="CliftonStrengths">
+          <span class="chip">Woo</span>
+          <span class="chip">Responsibility</span>
+          <span class="chip">Strategic</span>
+          <span class="chip">Arranger</span>
+          <span class="chip">Positivity</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="container">
+        <div class="focus-panel">
+          <div class="section-label" style="color:var(--yellow)">Current Focus</div>
+          <h2>Building for what's next.</h2>
+          <p>
+            I'm currently pursuing an MBA in Vancouver with a specialization in AI &amp; Machine Learning Leadership.
+            I'm particularly interested in how AI, neuroscience, and emerging technologies can support more intelligent,
+            responsible, and human-centered innovation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="cta">
+      <div class="container">
+        <div class="section-label">Let's Connect</div>
+        <h2>Let's build something meaningful.</h2>
+        <p>
+          Whether you're building a new product, growing a business, or exploring opportunities in AI and innovation,
+          I'd be glad to connect.
+        </p>
+        <div class="cta-actions">
+          <!-- Replace # with your actual LinkedIn URL -->
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="https://codebrew.co" target="_blank" rel="noopener">CodeBrew</a>
+          <!-- Replace hello@example.com with your actual email -->
+          <a class="btn btn-outline" href="mailto:hello@example.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>Ma. Cecilia del Mundo</div>
+      <div>Building products. Connecting people. Creating impact.</div>
+    </div>
+  </footer>
+</body>
+</html>
