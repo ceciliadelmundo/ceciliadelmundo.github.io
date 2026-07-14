@@ -345,6 +345,44 @@
       .btn{width:100%}
       .footer-inner{flex-direction:column;align-items:flex-start}
     }
+    .ventures-simple{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:28px;
+}
+
+.venture-button{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:260px;
+    padding:18px 20px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;
+    color:var(--white);
+    text-decoration:none;
+    background:rgba(255,255,255,.03);
+    transition:.25s ease;
+}
+
+.venture-button:hover{
+    border-color:var(--yellow);
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.05);
+}
+
+.venture-button strong{
+    font-size:1.1rem;
+}
+
+.venture-button span{
+    color:rgba(255,255,255,.7);
+    font-size:.92rem;
+}
+
+}
+</style>
   </style>
 </head>
 <body>
@@ -527,57 +565,49 @@
       </div>
     </section>
 
-    <section id="focus">
-      <div class="container">
+  <section id="focus">
+    <div class="container">
         <div class="focus-panel">
-          <div class="section-label" style="color:var(--yellow)">Current Focus</div>
-          <h2>Building for what's next.</h2>
-          <p>
-<p>
-While pursuing my MBA in Vancouver with a specialization in AI &amp; Machine Learning Leadership, I continue building products through
-<a href="https://codebrew.co" target="_blank" rel="noopener">CodeBrew</a>, the technology company I co-founded to help founders and organizations transform ideas into scalable digital solutions.
-</p>
 
-<h4 class="ventures-title">Current Ventures</h4>
+            <div class="section-label" style="color:var(--yellow)">
+                Current Focus
+            </div>
 
-<div class="ventures-grid">
+            <h2>Building for what's next.</h2>
 
-    <a href="https://www.codebrew.co/work/cashbrew"
-       class="venture-card"
-       target="_blank"
-       rel="noopener">
+            <p>
+                While pursuing my MBA in Vancouver with a specialization in AI &amp; Machine Learning Leadership, I continue building products through
+                <a href="https://codebrew.co" target="_blank" rel="noopener">CodeBrew</a>,
+                the technology company I co-founded to help founders and organizations transform ideas into scalable digital solutions.
+            </p>
 
-        <h3>CashBrew ↗</h3>
+            <p>
+                I'm particularly interested in the intersection of AI, product innovation, neuroscience, and human-centered technology. I believe AI should augment human potential, and I'm passionate about building products that solve meaningful problems through the responsible and ethical use of AI.
+            </p>
 
-        <p>
-            P2P lending management platform<br>
-            for small and mid-sized lenders.
-        </p>
+            <div class="ventures-simple">
 
-    </a>
+                <a href="https://www.codebrew.co/work/cashbrew"
+                   target="_blank"
+                   rel="noopener"
+                   class="venture-button">
+                    <strong>CashBrew ↗</strong>
+                    <span>P2P lending management for small and mid-sized lenders.</span>
+                </a>
 
-    <a href="https://terrasentri.codebrew.co/"
-       class="venture-card"
-       target="_blank"
-       rel="noopener">
+                <a href="https://terrasentri.codebrew.co/"
+                   target="_blank"
+                   rel="noopener"
+                   class="venture-button">
+                    <strong>TerraSentri ↗</strong>
+                    <span>Personal safety and environmental intelligence.</span>
+                </a>
 
-        <h3>TerraSentri ↗</h3>
+            </div>
 
-        <p>
-            Personal safety &amp;<br>
-            environmental intelligence.
-        </p>
-
-    </a>
-
-</div>
-
-<p>
-I'm particularly interested in the intersection of AI, product innovation, neuroscience, and human-centered technology. I believe AI should augment human potential, and I'm passionate about building products that solve meaningful problems through the responsible and ethical use of AI.
-</p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
     <section id="connect" class="cta">
       <div class="container">
